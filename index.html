@@ -20,5 +20,18 @@
                     return 'Scissors';
             }
         }
+
+        function playOneRound(playerSelection, computerSelection) {
+            playerSelection = playerSelection.toLowerCase();
+            computerSelection = computerSelection.toLowerCase();
+            let playerWins = (playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock");
+
+            if(playerWins)
+                return `You Lose! ${computerSelection} beats ${playerSelection}`;
+            else if(playerSelection == computerSelection)
+                return "It's a draw";
+            else
+                return `You win! ${playerSelection} beats ${computerSelection}`;
+        }
     </script>
 </body>
