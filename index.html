@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <script>
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        function computerPlay() {
+            switch(getRandomInt(0, 2)) {
+                case 0:
+                    return 'Rock';
+                case 1:
+                    return 'Paper';
+                case 2:
+                    return 'Scissors';
+            }
+        }
+    </script>
+</body>
