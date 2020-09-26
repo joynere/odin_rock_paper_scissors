@@ -1,0 +1,28 @@
+#buttons {
+    display: grid;
+    width: 50%;
+    grid-template-columns: repeat(3, 33%);
+    column-gap: 10px;
+}
+
+
+#buttons button {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 15vw;
+    height: 15vw;
+    max-width: 310px;
+    max-height: 310px;
+}
+
+#buttons #rock-btn {
+    background-image: url(icons/rock.png);
+}
+
+#buttons #paper-btn {
+    background-image: url(icons/paper.png);
+}
+
+#buttons #scissors-btn {
+    background-image: url(icons/scissors.png);
+}
