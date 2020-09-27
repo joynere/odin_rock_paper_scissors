@@ -21,7 +21,7 @@ function playOneRound(playerSelection, computerSelection) {
     let playerWins = (playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock");
 
     if(playerWins)
-        return `You Lose! ${computerSelection} beats ${playerSelection}`;
+        return `You lose! ${computerSelection} beats ${playerSelection}`;
     else if(playerSelection == computerSelection)
         return "It's a draw";
     else
@@ -51,3 +51,30 @@ function game() {
     else
         console.log(`The Computer won with a score of ${roundsToPlay - draws - playerWinCount}`);
 }
+
+let playerScore = 0;
+let computerScore = 0;
+
+function playerAction(button) {
+    //                                  remove  last 4 characters ("-btn") at the end of the button id
+    let result = playOneRound(button.id.slice(0, -4), computerPlay());
+    document.querySelector('#result').textContent = result;
+    if(result.includes("You win")) {
+        playerScore++;
+        redrawScore();
+    }
+    else if(result.includes("You lose")) {
+        computerScore++;
+        redrawScore();
+    }  
+}
+
+function redrawScore() {
+    document.querySelector('#score').textContent = `${playerScore} : ${computerScore}`;
+}
+
+
+//             
+const buttons = document.querySelectorAll('#buttons button');                                                                        
+buttons.forEach(button => button.addEventListener('click', () => playerAction(button)));
+

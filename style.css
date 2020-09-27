@@ -5,7 +5,6 @@
     column-gap: 10px;
 }
 
-
 #buttons button {
     background-size: contain;
     background-repeat: no-repeat;
@@ -13,6 +12,11 @@
     height: 15vw;
     max-width: 310px;
     max-height: 310px;
+}
+
+#buttons button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 #buttons #rock-btn {
@@ -25,4 +29,8 @@
 
 #buttons #scissors-btn {
     background-image: url(icons/scissors.png);
+}
+
+#score {
+    font-size: 3vw;
 }
